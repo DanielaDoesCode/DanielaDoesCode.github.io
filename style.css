@@ -1,0 +1,104 @@
+body{
+    font-family: 'Fira Code', monospace;
+    color: rgb(255, 242, 237);
+    background-color: #151E22;
+    text-align: center;
+}
+
+#hello, #description{
+    text-align: left;
+}
+
+.menu{
+ position: relative;
+ background: #cd3e3d;
+ width: 1em;
+ height: 1em;
+ border-radius: 5em 5em 5em 5em;
+ margin: auto;
+ margin-top: 5em;
+ margin-bottom: 5em;
+ cursor: pointer;
+}
+
+.menu:after{
+    content: "";
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    width: 1em;
+    height: 0.2em;
+}
+
+.menu ul{
+ list-style: none;
+ padding: 0;
+ transition: 1s all;
+ 
+}
+
+.menu:hover ul{
+    transform:rotate(0deg) translateY(-2em);
+}
+
+.menu li{
+    width: 5em;
+    height: 1.4em;
+    padding: 0.2;
+    margin-top: 0.2em;
+    text-align: center;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background-color: #fdaead;
+    
+    opacity: 0;
+}
+
+.menu:hover li{
+    opacity:1;
+    transition: ease-in 0.4s;
+}
+
+.menu li:hover{
+    background:#cd3e3d;
+    z-index: 10;
+}
+
+.menu:hover ul::before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    left: 50%;
+    top: -5.0em;
+
+/*pseudo element to cover the area where the options will be*/
+    border-width: 6.5em;
+    border-radius: 0 7.5em 7.5em 0;
+    border-left: 0;
+    border-style: solid;
+
+    border-color: rgba(0, 0,0,0.01);
+    z-index: -1;
+    cursor: default;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    line-height: 1.5em;
+}
+
+.menu li:nth-child(1){
+  transition-delay: 0ms;
+}
+
+.menu li :nth-child(2){
+  transition-delay: 100ms;
+}
+
+.menu li:nth-child(3){
+  transition-delay: 200ms;
+
+}
